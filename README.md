@@ -32,24 +32,95 @@ Recarga la lista de contactos desde la base de datos.
 Redirecciona a la ventana MainFrame.
 
 🛠️ # Estructura del Proyecto
-src/
-|-controller/
-│   └── AuthController.java 
-│   └── ContactoController.java  
-|-dao/
-│   └── ContactoDAO.java
-│   └── UsuarioDAO.java
-|-database/
-│   └── Conexion.java            # Lógica de negocio y conexión con la base de datos
-├── image/
-│   └── libro-de-contactos.java 
-├── model/
-│   └── Contacto.java            # Clase que representa el modelo de datos Contacto
-│   └── Usuario.java             # Clase que representa el modelo de datos Usuario
-├── view/
-│   └── ContactoForm.java        # Interfaz gráfica del usuario (formulario principal)
-│   └── MainFrame.java           # Menú principal (Gestión de Contacto y Cerrar Sesión)
-│   └── LoginFrame.java          # Interfaz gráfica de inicio de sesión  
+📁 controller/
+
+Controladores que gestionan la lógica entre los modelos (model) y las vistas (view).
+
+    AuthController.java
+
+        Maneja la lógica de autenticación de usuarios (inicio de sesión, cierre de sesión).
+
+        Verifica credenciales a través de UsuarioDAO.
+
+        Almacena el estado del usuario autenticado si es necesario.
+
+    ContactoController.java
+
+        Maneja la lógica CRUD para contactos.
+
+        Coordina entre ContactoForm y ContactoDAO.
+
+        Valida entradas antes de pasarlas al DAO.
+        
+📁 dao/
+
+Acceso a datos (Data Access Objects). Se encarga de la comunicación directa con la base de datos.
+
+    ContactoDAO.java
+
+        Métodos create(), readAll(), update(), delete().
+
+        Usa Conexion.java para abrir y cerrar conexiones.
+
+    UsuarioDAO.java
+
+        Método verificarCredenciales(String usuario, String clave).
+
+        Puede incluir métodos adicionales como registrarUsuario() si se desea expandir el sistema.
+        
+📁 database/
+
+    Conexion.java
+
+        Clase singleton que gestiona la conexión con la base de datos.
+
+        Debe tener métodos como getConnection() y lógica para manejar errores o reconexiones.
+
+
+📁 image/
+
+    Almacena recursos gráficos (iconos, logos).
+
+    libro-de-contactos.png logo para la interfaz menu principal.
+
+
+📁 model/
+
+    Contacto.java
+
+        Atributos: nombre, apellido, teléfono, correo, dirección.
+
+        Métodos: constructor(es), getters y setters.
+
+    Usuario.java
+
+        Atributos: usuario, contraseña.
+
+        Métodos: constructor(es), getters y setters.
+
+📁 view/
+
+Contiene todas las interfaces gráficas del usuario con Swing.
+
+    LoginFrame.java
+
+        Formulario para ingreso de usuario y contraseña.
+
+        Llama a AuthController para validar datos.
+
+    MainFrame.java
+
+        Ventana principal luego del login.
+
+        Permite acceder al módulo de gestión de contactos y cerrar sesión.
+
+    ContactoForm.java
+
+        Tabla con datos de contactos.
+
+        Botones para crear, actualizar, eliminar y limpiar.
+
+        Se comunica con ContactoController.
 
 🖼️ # Tecnologías Utilizadas
 
