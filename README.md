@@ -1,6 +1,8 @@
 📇# Sistema de Gestión de Contactos en Java (Swing)
 
 Este proyecto es una aplicación de escritorio desarrollada en Java utilizando Swing (JFrame) que permite gestionar una agenda de contactos personales. Implementa las operaciones básicas CRUD (Crear, Leer, Actualizar, Eliminar) conectándose con una base de datos mediante un controlador (ContactoController).
+
+
 🧩 # Funcionalidades
 
 ✔️ Listar contactos:
