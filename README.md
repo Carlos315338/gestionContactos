@@ -130,7 +130,7 @@ Contiene todas las interfaces gráficas del usuario con Swing.
 
     Swing (JFrame) para la interfaz gráfica
 
-    JDBC (u otro método de persistencia)
+    JDBC
 
     NetBeans IDE recomendado para desarrollo y diseño visual
 
@@ -170,4 +170,4 @@ Contiene todas las interfaces gráficas del usuario con Swing.
 👤 Autor
 
 Carlos Viveros
-Proyecto académico con fines de aprendizaje en Java.
+Proyecto académico SENA Construcción de aplicaciones con JAVA.
