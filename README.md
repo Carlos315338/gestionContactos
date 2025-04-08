@@ -32,15 +32,24 @@ Recarga la lista de contactos desde la base de datos.
 Redirecciona a la ventana MainFrame.
 
 🛠️ # Estructura del Proyecto
-
 src/
-├── controller/
-│   └── ContactoController.java  # Lógica de negocio y conexión con la base de datos
+|-controller/
+│   └── AuthController.java 
+│   └── ContactoController.java  
+|-dao/
+│   └── ContactoDAO.java
+│   └── UsuarioDAO.java
+|-database/
+│   └── Conexion.java            # Lógica de negocio y conexión con la base de datos
+├── image/
+│   └── libro-de-contactos.java 
 ├── model/
 │   └── Contacto.java            # Clase que representa el modelo de datos Contacto
+│   └── Usuario.java             # Clase que representa el modelo de datos Usuario
 ├── view/
 │   └── ContactoForm.java        # Interfaz gráfica del usuario (formulario principal)
-│   └── MainFrame.java           # Menú principal (opcional)
+│   └── MainFrame.java           # Menú principal (Gestión de Contacto y Cerrar Sesión)
+│   └── LoginFrame.java          # Interfaz gráfica de inicio de sesión  
 
 🖼️ # Tecnologías Utilizadas
 
